@@ -9,7 +9,7 @@ import { ApiService } from '../../services/api.service';
 export class HomeComponent {
   response: any[] = [];
   constructor(private apiService: ApiService) {
-    apiService.getCurrency().subscribe(res => {
+    apiService.getStocks().subscribe(res => {
       console.log(res);
       this.response = res.stocks?.slice(0, 8);
     })

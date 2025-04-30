@@ -20,7 +20,7 @@ export class ApiService {
     }
   }
 
-  getCurrency(): Observable<any> {
-    return this.http.get(this.url + "/quote/list", this.header);
+  getStocks(): Observable<any> {
+    return this.http.get(this.url + "/quote/list?limit=10", this.header);
   }
 }

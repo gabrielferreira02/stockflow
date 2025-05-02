@@ -10,12 +10,14 @@
             </div>
         </div>
         <div class="mt-3">
-            <p>Endereço: {{response.summaryProfile.address1}}, {{response.summaryProfile.city}}</p>
-            <div class="flex gap-1">
-                <p>Site: </p>
-                <a href="{{response.summaryProfile.website}}">{{response.summaryProfile.website}}</a>
-            </div>
-            <p>Setor: {{response.summaryProfile.sector}}</p>
+            @if (response.summaryProfile != null) {
+                <p>Endereço: {{response.summaryProfile.address1}}, {{response.summaryProfile.city}}</p>
+                <div class="flex gap-1">
+                    <p>Site: </p>
+                    <a href="{{response.summaryProfile.website}}">{{response.summaryProfile.website}}</a>
+                </div>
+                <p>Setor: {{response.summaryProfile.sector}}</p>
+            }
             <p>Fechamento ontem: {{response.regularMarketPreviousClose}} {{response.currency}}</p>
             <p>Última variação: {{response.regularMarketChangePercent >= 0 ? "+" : ""}}{{response.regularMarketChangePercent.toFixed(2)}}%</p>
         </div>

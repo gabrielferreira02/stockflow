@@ -1,30 +1,30 @@
 <section class="min-h-[100vh] mt-3 px-4">
     @if (response != null) {
         <div class="flex items-center gap-3">
-            <img src="{{response.logourl}}" alt="" class="h-[70px]">
+            <img src="{{response.logourl}}" alt="logo da {{response.longName}}" class="h-[70px]">
             <div>
-                <p class="text-2xl font-bold">{{response.longName}}</p>
-                <p class="font-bold">
+                <p class="text-2xl font-bold dark:text-white">{{response.longName}}</p>
+                <p class="font-bold dark:text-white">
                     Cotação: <span class="{{response.regularMarketPrice >= response.regularMarketPreviousClose ? 'text-green-500' : 'text-red-500'}}">{{response.regularMarketPrice}} {{response.currency}}</span>
                 </p>
             </div>
         </div>
         <div class="mt-3">
             @if (response.summaryProfile != null) {
-                <p>Endereço: {{response.summaryProfile.address1}}, {{response.summaryProfile.city}}</p>
-                <div class="flex gap-1">
+                <p class="dark:text-white">Endereço: {{response.summaryProfile.address1}}, {{response.summaryProfile.city}}</p>
+                <div class="flex gap-1 dark:text-white">
                     <p>Site: </p>
                     <a href="{{response.summaryProfile.website}}">{{response.summaryProfile.website}}</a>
                 </div>
-                <p>Setor: {{response.summaryProfile.sector}}</p>
+                <p class="dark:text-white">Setor: {{response.summaryProfile.sector}}</p>
             }
-            <p>Fechamento ontem: {{response.regularMarketPreviousClose}} {{response.currency}}</p>
-            <p>Última variação: {{response.regularMarketChangePercent >= 0 ? "+" : ""}}{{response.regularMarketChangePercent.toFixed(2)}}%</p>
+            <p class="dark:text-white">Fechamento ontem: {{response.regularMarketPreviousClose}} {{response.currency}}</p>
+            <p class="dark:text-white">Última variação: {{response.regularMarketChangePercent >= 0 ? "+" : ""}}{{response.regularMarketChangePercent.toFixed(2)}}%</p>
         </div>
         @if(barChartData != null && barChartOptions != null) {
-            <div class="mt-8 w-full max-w-3xl mx-auto">
-                <h2 class="text-xl font-bold mb-4">Cotação nos últimos 30 dias</h2>
-                <div class="bg-white p-4 rounded-lg shadow">
+            <div class="mt-8 w-full max-w-3xl">
+                <h2 class="text-xl font-bold mb-4 dark:text-white text-left">Cotação nos últimos 30 dias</h2>
+                <div class="bg-white p-4 rounded-lg shadow flex justify-start dark:bg-gray-900">
                     <canvas baseChart
                         [type]="'bar'"
                         [data]="barChartData"

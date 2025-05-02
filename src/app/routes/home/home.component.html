@@ -1,23 +1,23 @@
 <header class="w-full relative flex items-center justify-between mt-5">
     <div>
-        <h1 class="text-3xl font-bold w-[400px]"><span class="text-purple-700">Stackflow</span>, sua plataforma para se manter por dentro das atualizações das principais ações do mercado</h1>
+        <h1 class="text-3xl font-bold w-[400px] dark:text-white"><span class="text-purple-700">Stackflow</span>, sua plataforma para se manter por dentro das atualizações das principais ações do mercado</h1>
         <a href="/stocks" class="inline-block bg-purple-700 rounded-lg px-4 py-2 shadow-md text-white font-bold mt-4 hover:bg-purple-700/60 transition-all duration-500">Ver ações</a>
     </div>
     <div class="w-[170px] h-[170px] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] bg-purple-700 absolute top-6 -right-10"></div>
     <div class="rounded-[50%_50%_19%_81%_/_30%_38%_62%_70%] w-[170px] h-[170px] bg-purple-700 absolute -bottom-6 right-[180px]"></div>
-    <div class="mt-3 h-full w-[300px] rounded-lg backdrop-blur-md bg-white/30 shadow-lg">
+    <div class="mt-3 h-full w-[300px] rounded-lg backdrop-blur-md bg-gray-800/30 shadow-lg">
         @for (item of response; track $index) {
             <a href="/stocks/{{item.stock}}" target="_blank" class="flex gap-3 items-center py-1 px-3 w-[300px]">
                 <img src="{{item.logo}}" alt="{{item.name}} logo" class="h-[35px]">
-                <p class="font-bold w-2/3">{{item.name}}</p>
+                <p class="font-bold w-2/3 dark:text-white">{{item.name}}</p>
                 <p class="font-bold {{item.change > 0 ? 'text-green-500' : 'text-red-500'}}">{{item.change.toFixed(2)}}</p>
             </a>
         }
     </div>
 </header>
 <section class="h-[80vh] w-full mt-4 flex items-center justify-between">
-    <img src="/14140043_5384284.svg" alt="" class="w-1/2">
+    <img src="/image.webp" alt="" class="w-[45%]">
     <div>
-        <h1 class="text-3xl font-bold w-[400px]">Acesse aos principais detalhes das ações como histórico de preços, preço atual, média do preço</h1>
+        <h1 class="text-3xl font-bold w-[400px] dark:text-white">Acesse aos principais detalhes das ações como histórico de preços, preço atual, média do preço</h1>
     </div>
 </section>

@@ -1,23 +1,23 @@
 <section class="min-h-full w-full mt-4">
     <table class="w-[70%] mx-auto">
-        <tr>
-            <th>Logo</th>
-            <th>Nome</th>
-            <th>Nome ação</th>
-            <th>Valor</th>
+        <tr class="py-1">
+            <th class="text-white">Logo</th>
+            <th class="text-white">Nome</th>
+            <th class="text-white">Nome ação</th>
+            <th class="text-white">Valor</th>
         </tr>
         @for (item of response; track $index) {
             <tr>
                 <td class="text-center">
                     <img src="{{item.logo}}" alt="{{item.name}} logo" class="h-[35px] block mx-auto">
                 </td>
-                <td class="text-center">
+                <td class="text-center dark:text-white">
                     <a href="/stocks/{{item.stock}}" target="_blank" class="block">
                         {{item.name}}
                     </a>
                 </td>
                 <td class="text-center">
-                    <p class="font-bold">{{item.stock}}</p>
+                    <p class="font-bold dark:text-white">{{item.stock}}</p>
                 </td>
                 <td class="text-center">
                     <p class="font-bold {{item.change >= 0 ? 'text-green-500' : 'text-red-500'}}">{{item.change.toFixed(2)}}</p>
@@ -33,7 +33,7 @@
         >
             <
         </button>
-        <p class="font-bold">{{currentPage}} / {{lastPage}}</p>
+        <p class="font-bold dark:text-white">{{currentPage}} / {{lastPage}}</p>
         <button 
         [disabled]="currentPage >= lastPage" 
         (click)="getNextPage()"

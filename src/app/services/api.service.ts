@@ -23,4 +23,9 @@ export class ApiService {
   getStocks(): Observable<any> {
     return this.http.get(this.url + "/quote/list?limit=10", this.header);
   }
+
+  getStock(stock: string): Observable<any> {
+    const endpoint = `${this.url}/quote/${stock}?token=${this.token}&interval=1d&range=1mo&modules=summaryProfile`
+    return this.http.get(endpoint);
+  }
 }

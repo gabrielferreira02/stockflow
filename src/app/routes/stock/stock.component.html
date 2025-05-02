@@ -17,7 +17,7 @@
             </div>
             <p>Setor: {{response.summaryProfile.sector}}</p>
             <p>Fechamento ontem: {{response.regularMarketPreviousClose}} {{response.currency}}</p>
-            <p>Última variação: {{response.regularMarketChangePercent >= 0 ? "+" : "-"}}{{response.regularMarketChangePercent.toFixed(2)}}%</p>
+            <p>Última variação: {{response.regularMarketChangePercent >= 0 ? "+" : ""}}{{response.regularMarketChangePercent.toFixed(2)}}%</p>
         </div>
         @if(barChartData != null && barChartOptions != null) {
             <div class="mt-8 w-full max-w-3xl mx-auto">

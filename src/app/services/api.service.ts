@@ -20,8 +20,8 @@ export class ApiService {
     }
   }
 
-  getStocks(): Observable<any> {
-    return this.http.get(this.url + "/quote/list?limit=10", this.header);
+  getStocks(limit: number, page: number): Observable<any> {
+    return this.http.get(this.url + "/quote/list?limit=" + limit + "&page=" + page, this.header);
   }
 
   getStock(stock: string): Observable<any> {
